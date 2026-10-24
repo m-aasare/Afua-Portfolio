@@ -1,40 +1,468 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f6f2ec" />
-  <meta name="description" content="Portfolio of Afua Asare — scientist exploring research, biotechnology, and the intersection of science and society." />
-  <title>Afua Asare — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{--cream:#f6f2ec;--paper:#fffdf9;--ink:#222925;--muted:#666d65;--green:#435b4b;--lightgreen:#e4e9de;--rule:#d8d9d0;--gold:#b08b59}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.7}::selection{background:#cddac7}a{color:inherit;text-decoration:none}button{font:inherit} .wrap{max-width:1180px;margin:auto;padding:0 40px}
-    header{position:sticky;top:0;background:rgba(246,242,236,.95);backdrop-filter:blur(14px);z-index:10;border-bottom:1px solid var(--rule)}nav{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Playfair Display',serif;font-size:25px;letter-spacing:-.8px}.navlinks{display:flex;gap:30px;align-items:center}.navlinks a{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}.navlinks a:hover,.smalllink:hover{color:var(--gold)}.navcta{background:var(--green);color:#fff!important;padding:11px 18px;border-radius:2px}.menu{display:none;background:none;border:0;font-size:24px;cursor:pointer}
-    .hero{min-height:690px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:75px;padding-top:95px;padding-bottom:100px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green)}h1,h2,h3{font-family:'Playfair Display',serif;font-weight:400;line-height:1.12}h1{font-size:clamp(64px,8vw,112px);letter-spacing:-.055em;margin:28px 0}h1 em{color:var(--green);font-weight:400} .hero p{font-size:19px;max-width:570px;color:#4c554e;margin:0 0 32px}.actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.button{display:inline-block;background:var(--green);color:#fff;padding:14px 23px;font-size:13px;font-weight:700;letter-spacing:.04em}.button:hover{background:#2c4536}.smalllink{border-bottom:1px solid var(--ink);font-size:13px;font-weight:700;padding:12px 0}.art{height:470px;position:relative;background:#d8daca;overflow:hidden;border-radius:48% 48% 3px 3px}.art:before{content:'';position:absolute;width:350px;height:350px;background:rgba(246,242,236,.40);border-radius:50%;top:60px;left:-100px}.art:after{content:'';position:absolute;width:250px;height:250px;border:1px solid #8d9b86;border-radius:50%;bottom:-60px;right:-55px}.art .monogram{font-family:'Playfair Display',serif;position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);font-size:clamp(110px,15vw,190px);color:#f8f5ed;line-height:1;z-index:1}.art .phototip{position:absolute;bottom:20px;left:24px;right:24px;text-align:center;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#596455;z-index:2}.micro{font-size:12px;color:var(--muted)}
-    section{scroll-margin-top:95px}.section{padding:100px 0;border-top:1px solid var(--rule)}.section-header{display:grid;grid-template-columns:1fr 2fr;gap:45px;margin-bottom:50px}.section-header h2{font-size:clamp(42px,5vw,72px);letter-spacing:-.04em;margin:0}.section-header p{font-size:17px;color:#59615b;max-width:630px;margin:4px 0}.accent{color:var(--green)}.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:55px}.aboutgrid p{font-size:17px;color:#4b534e}.taglist{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.tag{border:1px solid #c4cabe;border-radius:50px;padding:7px 13px;font-size:12px;color:#4c5a4e}.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.highlight{background:var(--paper);padding:32px;min-height:220px;border:1px solid #e6e5dc}.highlight .num{color:var(--gold);font-family:'Playfair Display',serif;font-size:32px}.highlight h3{font-size:25px;margin:12px 0}.highlight p{font-size:13px;color:var(--muted);margin:0}
-    .timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px}.entry{background:var(--paper);border:1px solid #e5e5dc;padding:32px;min-height:245px}.entry .meta{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--green);font-weight:700}.entry h3{font-size:26px;margin:15px 0 5px}.entry .sub{color:#646f65;font-size:13px;font-weight:600}.entry p{font-size:14px;color:#5b625b;margin-top:16px}
-    .feature{padding:42px;background:var(--green);color:#fff;display:grid;grid-template-columns:1fr 1.3fr;gap:40px}.feature h3{font-size:39px;margin:10px 0}.feature p{color:#e1e9dd;font-size:15px}.feature .eyebrow{color:#d4c3a7}.feature .tag{color:#fff;border-color:#9aaa99}.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}.project{padding:32px;background:var(--paper);border:1px solid #e5e5dc}.project h3{font-size:25px;margin:10px 0}.project p{color:#5a625c;font-size:14px}
-    .contact{background:#e8e9df;padding:110px 0}.contact h2{font-size:clamp(55px,7vw,94px);max-width:780px;letter-spacing:-.045em;margin:15px 0 25px}.contact p{max-width:560px;color:#59645b}.footer{padding:30px 0;display:flex;justify-content:space-between;gap:15px;font-size:12px;color:#647064}.footer a{text-decoration:underline}.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:800px){.wrap{padding:0 24px}nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:22px 24px 30px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--rule)}.navlinks.open{display:flex}.hero{grid-template-columns:1fr;min-height:0;gap:40px;padding-top:72px;padding-bottom:75px}.hero h1{font-size:clamp(62px,14vw,90px)}.art{height:350px;max-width:480px;width:100%}.section{padding:75px 0}.section-header,.aboutgrid,.timeline,.feature,.projects{grid-template-columns:1fr}.highlights{grid-template-columns:1fr}.section-header{gap:16px;margin-bottom:33px}.feature{padding:28px}.contact{padding:80px 0}.footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#f6f2ec"/>
+<meta name="description" content="Portfolio of Afua Asare: scientist and interdisciplinary professional working across research, biotechnology, global health, and community impact."/>
+<title>Afua Asare — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream:#f6f2ec;
+  --paper:#fffdf9;
+  --ink:#222925;
+  --muted:#666d65;
+  --green:#435b4b;
+  --lightgreen:#e4e9de;
+  --rule:#d8d9d0;
+  --gold:#b08b59;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.7}
+::selection {background:#cddac7}
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+.wrap {max-width:1180px;margin:auto;padding:0 40px}
+header {position:sticky;top:0;background:rgba(246,242,236,.95);backdrop-filter:blur(14px);z-index:10;border-bottom:1px solid var(--rule)}
+nav {height:80px;display:flex;align-items:center;justify-content:space-between}
+.brand {font-family:'Playfair Display',serif;font-size:25px;letter-spacing:-.8px}
+.navlinks {display:flex;gap:30px;align-items:center}
+.navlinks a {font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.navlinks a:hover,.smalllink:hover {color:var(--gold)}
+.navcta {background:var(--green);color:#fff!important;padding:11px 18px;border-radius:2px}
+.menu {display:none;background:none;border:0;font-size:24px;cursor:pointer}
+.hero {min-height:690px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:75px;padding-top:95px;padding-bottom:100px}
+.eyebrow {font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green)}
+h1,h2,h3 {font-family:'Playfair Display',serif;font-weight:400;line-height:1.12}
+h1 {font-size:clamp(64px,8vw,112px);letter-spacing:-.055em;margin:28px 0}
+h1 em {color:var(--green);font-weight:400}
+.hero p {font-size:19px;max-width:570px;color:#4c554e;margin:0 0 32px}
+.actions {display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.button {display:inline-block;background:var(--green);color:#fff;padding:14px 23px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.button:hover {background:#2c4536}
+.smalllink {border-bottom:1px solid var(--ink);font-size:13px;font-weight:700;padding:12px 0}
+.art {height:470px;position:relative;background:#d8daca;overflow:hidden;border-radius:48% 48% 3px 3px}
+.art:before {content:'';position:absolute;width:350px;height:350px;background:rgba(246,242,236,.40);border-radius:50%;top:60px;left:-100px}
+.art:after {content:'';position:absolute;width:250px;height:250px;border:1px solid #8d9b86;border-radius:50%;bottom:-60px;right:-55px}
+.art .monogram {font-family:'Playfair Display',serif;position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);font-size:clamp(110px,15vw,190px);color:#f8f5ed;line-height:1;z-index:1}
+.art .phototip {position:absolute;bottom:20px;left:24px;right:24px;text-align:center;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#596455;z-index:2}
+.micro {font-size:12px;color:var(--muted)}
+section {scroll-margin-top:95px}
+.section {padding:100px 0;border-top:1px solid var(--rule)}
+.section-header {display:grid;grid-template-columns:1fr 2fr;gap:45px;margin-bottom:50px}
+.section-header h2 {font-size:clamp(42px,5vw,72px);letter-spacing:-.04em;margin:0}
+.section-header p {font-size:17px;color:#59615b;max-width:630px;margin:4px 0}
+.accent {color:var(--green)}
+.aboutgrid {display:grid;grid-template-columns:1fr 1fr;gap:55px}
+.aboutgrid p {font-size:17px;color:#4b534e}
+.taglist {display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}
+.tag {border:1px solid #c4cabe;border-radius:50px;padding:7px 13px;font-size:12px;color:#4c5a4e}
+.highlights {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.highlight {background:var(--paper);padding:32px;min-height:220px;border:1px solid #e6e5dc}
+.highlight .num {color:var(--gold);font-family:'Playfair Display',serif;font-size:32px}
+.highlight h3 {font-size:25px;margin:12px 0}
+.highlight p {font-size:13px;color:var(--muted);margin:0}
+.timeline {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.entry {background:var(--paper);border:1px solid #e5e5dc;padding:32px;min-height:245px}
+.entry .meta {font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--green);font-weight:700}
+.entry h3 {font-size:26px;margin:15px 0 5px}
+.entry .sub {color:#646f65;font-size:13px;font-weight:600}
+.entry p {font-size:14px;color:#5b625b;margin-top:16px}
+.feature {padding:42px;background:var(--green);color:#fff;display:grid;grid-template-columns:1fr 1.3fr;gap:40px}
+.feature h3 {font-size:39px;margin:10px 0}
+.feature p {color:#e1e9dd;font-size:15px}
+.feature .eyebrow {color:#d4c3a7}
+.feature .tag {color:#fff;border-color:#9aaa99}
+.projects {display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.project {padding:32px;background:var(--paper);border:1px solid #e5e5dc}
+.project h3 {font-size:25px;margin:10px 0}
+.project p {color:#5a625c;font-size:14px}
+#speaking h3 {font-size:29px;margin:0 0 15px}
+#speaking .aboutgrid p {font-size:16px}
+.contact {background:#e8e9df;padding:110px 0}
+.contact h2 {font-size:clamp(55px,7vw,94px);max-width:780px;letter-spacing:-.045em;margin:15px 0 25px}
+.contact p {max-width:560px;color:#59645b}
+.footer {padding:30px 0;display:flex;justify-content:space-between;gap:15px;font-size:12px;color:#647064}
+.footer a {text-decoration:underline}
+.reveal {opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible {opacity:1;transform:none}
+@media(max-width:800px) {
+  .wrap {padding:0 24px}
+  nav {height:68px}
+  .menu {display:block}
+  .navlinks {display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:22px 24px 30px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--rule)}
+  .navlinks.open {display:flex}
+  .hero {grid-template-columns:1fr;min-height:0;gap:40px;padding-top:72px;padding-bottom:75px}
+  .hero h1 {font-size:clamp(62px,14vw,90px)}
+  .art {height:350px;max-width:480px;width:100%}
+  .section {padding:75px 0}
+  .section-header,.aboutgrid,.timeline,.feature,.projects {grid-template-columns:1fr}
+  .highlights {grid-template-columns:1fr}
+  .section-header {gap:16px;margin-bottom:33px}
+  .feature {padding:28px}
+  .contact {padding:80px 0}
+  .footer {flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  .reveal {opacity:1;transform:none;transition:none}
+}
+</style>
 </head>
+
 <body>
-<header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="#home">Afua Asare<span class="accent">.</span></a><button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#beyond">Beyond the lab</a><a href="#contact" class="navcta">Say hello ↗</a></div></nav></header>
+<header>
+  <nav aria-label="Main navigation" class="wrap">
+    <a class="brand" href="#home">Afua Asare<span class="accent">.</span></a>
+    <button aria-expanded="false" aria-label="Toggle navigation" class="menu" id="menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#beyond">Beyond</a>
+      <a class="navcta" href="#contact">Say hello ↗</a>
+    </div>
+  </nav>
+</header>
+
 <main>
-<section id="home" class="hero wrap"><div><div class="eyebrow">Scientist · Researcher · Curious thinker</div><h1>Hello, I'm <em>Afua.</em></h1><p>Exploring the places where science, people, and possibility meet. From infectious disease research to the broader questions shaping health and innovation.</p><div class="actions"><a href="#about" class="button">Get to know me ↗</a><a href="#research" class="smalllink">Explore my work ↓</a></div><p class="micro" style="margin-top:36px">Harvard University ’26 &nbsp; · &nbsp; New York & Boston</p></div><div class="art" role="img" aria-label="Decorative placeholder for a portrait photo"><div class="monogram">AA</div><div class="phototip">Your portrait can go here</div></div></section>
-<section class="section" id="about"><div class="wrap"><div class="section-header reveal"><div class="eyebrow">01 / About me</div><div><h2>A little about <span class="accent">my story.</span></h2><p>I am drawn to questions that connect rigorous science with real-world impact.</p></div></div><div class="aboutgrid reveal"><div><p>I'm a Harvard graduate with a background in Molecular & Cellular Biology and Global Health & Health Policy. My work has taken me across immunology, infectious disease research, and biotechnology.</p><p>I care deeply about how discoveries move beyond the lab, particularly the systems, policies, and decisions that determine who benefits from them.</p></div><div><p>Currently working in vaccines research, I continue to explore the intersections of science, innovation, and global health equity.</p><div class="taglist"><span class="tag">Immunology</span><span class="tag">Infectious disease</span><span class="tag">Biotechnology</span><span class="tag">Global health</span></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="highlights reveal"><div class="highlight"><div class="num">01</div><h3>Scientific inquiry</h3><p>Using molecular and computational approaches to investigate complex biological questions.</p></div><div class="highlight"><div class="num">02</div><h3>Human impact</h3><p>Thinking critically about health equity and access to scientific innovation.</p></div><div class="highlight"><div class="num">03</div><h3>Interdisciplinary thinking</h3><p>Connecting research, strategy, and policy.</p></div></div></div></section>
-<section class="section" id="experience"><div class="wrap"><div class="section-header reveal"><div class="eyebrow">02 / Experience</div><div><h2>Where I've <span class="accent">been.</span></h2><p>Experiences across academic research, industry, and interdisciplinary work.</p></div></div><div class="timeline reveal"><article class="entry"><div class="meta">2026 — Present · Pearl River, NY</div><h3>Associate Scientist, Vaccines</h3><div class="sub">Pfizer</div><p>Contributing to vaccine-related laboratory research and assay workflows.</p></article><article class="entry"><div class="meta">2025 — 2026 · Boston, MA</div><h3>Virology & Vaccine Researcher</h3><div class="sub">Beth Israel Deaconess Medical Center</div><p>Analyzed longitudinal plasma proteomics to investigate biological signatures associated with HIV viral rebound.</p></article><article class="entry"><div class="meta">2024 — 2025 · Cambridge, MA</div><h3>Undergraduate Researcher</h3><div class="sub">Broad Institute</div><p>Worked on immunology research involving patient plasma samples and multiplex assays.</p></article><article class="entry"><div class="meta">2026 · Cambridge, MA</div><h3>Harvard University</h3><div class="sub">B.A., Molecular & Cellular Biology</div><p>Secondary field in Global Health & Health Policy; completed senior thesis in HIV-related proteomics.</p></article></div></div></section>
-<section class="section" id="research"><div class="wrap"><div class="section-header reveal"><div class="eyebrow">03 / Selected research</div><div><h2>Questions worth <span class="accent">asking.</span></h2><p>A selection of scientific questions and methods that have shaped my work.</p></div></div><article class="feature reveal"><div><div class="eyebrow">Featured · Senior thesis</div><h3>Understanding HIV viral rebound</h3><p>Plasma Proteomic Remodeling Following Antiretroviral Treatment Interruption Reveals Candidate Signatures of Viral Rebound in HIV.</p></div><div><p>Investigated paired plasma proteomic profiles in the context of antiretroviral treatment interruption. Applied differential protein analysis and pathway enrichment approaches to examine biological changes associated with viral rebound.</p><div class="taglist"><span class="tag">Proteomics</span><span class="tag">R</span><span class="tag">limma</span><span class="tag">GSEA</span><span class="tag">HIV</span></div></div></article><div class="projects reveal"><article class="project"><div class="eyebrow">Immunology</div><h3>Exploring immune responses in sepsis</h3><p>Research experience involving multiplex immunoassays and analysis of patient plasma samples.</p></article><article class="project"><div class="eyebrow">Computational biology</div><h3>Data-driven biological discovery</h3><p>Experience with computational analysis, experimental design, and interpreting complex biological datasets.</p></article></div></div></section>
-<section class="section" id="beyond"><div class="wrap"><div class="section-header reveal"><div class="eyebrow">04 / Beyond the lab</div><div><h2>More than <span class="accent">one discipline.</span></h2><p>I'm interested in the wider world around science: mentorship, community, entrepreneurship, language, and the way institutions shape opportunity.</p></div></div><div class="aboutgrid reveal"><p>Outside of research, I enjoy connecting with people across cultures and disciplines, learning new things, and exploring ways to make complex ideas more accessible.</p><p>This space will grow with me as I share writing, projects, and reflections on the intersections of science, health, and society.</p></div></div></section>
-<section class="contact" id="contact"><div class="wrap reveal"><div class="eyebrow">05 / Let's connect</div><h2>Good things begin with a <em>conversation.</em></h2><p>Interested in research, collaboration, mentorship, or exchanging ideas? I'd love to hear from you.</p><div class="actions" style="margin-top:32px"><a class="button" href="mailto:afuadasare8@gmail.com">Send an email ↗</a><span class="micro">Add your LinkedIn URL here before publishing.</span></div></div></section>
-</main><footer class="wrap footer"><span>© <span id="year"></span> Afua Asare. Made with curiosity.</span><span><a href="#home">Back to top ↑</a></span></footer>
+<section class="hero wrap" id="home">
+  <div>
+    <div class="eyebrow">Scientist · Researcher · Curious thinker</div>
+    <h1>Hello, I'm <em>Afua.</em></h1>
+    <p>Exploring the places where science, people, and possibility meet. From infectious disease research to the broader questions shaping health and innovation.</p>
+    <div class="actions">
+      <a class="button" href="#about">Get to know me ↗</a>
+      <a class="smalllink" href="#research">Explore my work ↓</a>
+    </div>
+    <p class="micro" style="margin-top:36px">Harvard University ’26 &nbsp; · &nbsp; New York</p>
+  </div>
+  <div class="art" role="img" aria-label="Decorative placeholder for a portrait photo">
+    <div class="monogram">AA</div>
+    <div class="phototip">Your portrait can go here</div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">01 / About me</div>
+      <div>
+        <h2>A little about <span class="accent">my story.</span></h2>
+        <p>I am drawn to questions that connect rigorous science with real-world impact.</p>
+      </div>
+    </div>
+    <div class="aboutgrid reveal">
+      <div>
+        <p>I'm a Harvard graduate with a background in Molecular &amp; Cellular Biology and Global Health &amp; Health Policy. My work has taken me across immunology, infectious disease research, biotechnology, and initiatives that expand opportunity.</p>
+        <p>I care deeply about how discoveries move beyond the lab, particularly the systems, policies, and decisions that determine who benefits from them.</p>
+      </div>
+      <div>
+        <p>Currently working in vaccines research, I continue to explore the intersections of science, innovation, and global health equity. Beyond research, I enjoy bringing people and ideas together through mentorship, leadership, and cross-cultural engagement.</p>
+        <div class="taglist">
+          <span class="tag">Immunology</span>
+          <span class="tag">Infectious disease</span>
+          <span class="tag">Biotechnology</span>
+          <span class="tag">Global health</span>
+          <span class="tag">Mentorship</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="highlights reveal">
+      <div class="highlight">
+        <div class="num">01</div>
+        <h3>Scientific inquiry</h3>
+        <p>Studying complex biological questions through laboratory and computational approaches.</p>
+      </div>
+      <div class="highlight">
+        <div class="num">02</div>
+        <h3>Human impact</h3>
+        <p>Advocating for access to health, education, and opportunity.</p>
+      </div>
+      <div class="highlight">
+        <div class="num">03</div>
+        <h3>Bringing people together</h3>
+        <p>Creating spaces for dialogue through events, workshops, and mentorship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">02 / Experience</div>
+      <div>
+        <h2>Where I've <span class="accent">been.</span></h2>
+        <p>Across science, public policy, education, leadership, and global engagement.</p>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <article class="entry">
+        <div class="meta">2026 – Present · Pearl River, NY</div>
+        <h3>Associate Scientist, Vaccines</h3>
+        <div class="sub">Pfizer</div>
+        <p>Working in vaccine research and laboratory assay workflows. Specific project details are not shared publicly.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">2025 – 2026 · Boston, MA</div>
+        <h3>Virology &amp; Vaccine Researcher</h3>
+        <div class="sub">Beth Israel Deaconess Medical Center</div>
+        <p>Conducted senior thesis research on plasma proteomic changes associated with HIV viral rebound following antiretroviral treatment interruption.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">2024 – 2025 · Cambridge, MA</div>
+        <h3>Undergraduate Researcher</h3>
+        <div class="sub">Broad Institute</div>
+        <p>Supported immunology research involving patient plasma samples and multiplex immunoassays.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Jan – Jun 2025 · Boston, MA</div>
+        <h3>Policy Fellow</h3>
+        <div class="sub">uAspire</div>
+        <p>Advocated for simpler FAFSA processes through meetings with more than five state and federal legislative offices and wrote an opinion piece on financial aid reform.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">April 2025 · United Nations Headquarters, New York</div>
+        <h3>Youth Delegate, UN ECOSOC Youth Forum</h3>
+        <div class="sub">United Nations Economic and Social Council</div>
+        <p>Participated as a youth delegate in conversations on global development, youth priorities, and international cooperation at United Nations Headquarters.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">May – Nov 2024 · Ghana / Global</div>
+        <h3>UN Millennium Fellow</h3>
+        <div class="sub">Millennium Fellowship</div>
+        <p>Worked on an education-focused social impact initiative centered on improving access to educational opportunities for young people in Ghana.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">May – Jul 2024 · India &amp; Dubai</div>
+        <h3>Mentor &amp; Educational Consultant</h3>
+        <div class="sub">Youth-focused education technology organization · India &amp; Dubai</div>
+        <p>Designed and delivered leadership and college-readiness workshops for 50+ high school students across India and Dubai. Mentored five student teams developing education-focused projects presented at conferences across five cities.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Jun – Aug 2023 · Cape Town, South Africa</div>
+        <h3>Strategy Consulting Intern &amp; Client Manager</h3>
+        <div class="sub">UVU BIO</div>
+        <p>Helped develop a market-entry strategy for a biotech education program in Nigeria and Kenya through stakeholder interviews, participant research, and market analysis.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">03 / Selected research</div>
+      <div>
+        <h2>Questions worth <span class="accent">asking.</span></h2>
+        <p>Scientific inquiry informed by a commitment to real-world impact.</p>
+      </div>
+    </div>
+
+    <article class="feature reveal">
+      <div>
+        <div class="eyebrow">Featured · Harvard senior thesis</div>
+        <h3>From molecular discovery to equitable HIV care</h3>
+        <p>Plasma Proteomic Remodeling Following Antiretroviral Treatment Interruption Reveals Candidate Signatures of Viral Rebound in HIV.</p>
+      </div>
+      <div>
+        <p>My molecular and cellular biology thesis analyzed paired plasma proteomic profiles after antiretroviral treatment interruption to investigate candidate signatures of viral rebound. For my Global Health and Health Policy secondary, I wrote a companion chapter examining how health infrastructure, research funding, and policy implementation affect whether emerging biomarker discoveries can improve care in Sub-Saharan Africa. Comparing Ghana and South Africa, I explored approaches to more inclusive research, locally appropriate diagnostics, and equitable implementation.</p>
+        <div class="taglist">
+          <span class="tag">Proteomics</span>
+          <span class="tag">R</span>
+          <span class="tag">limma</span>
+          <span class="tag">GSEA</span>
+        </div>
+      </div>
+    </article>
+
+    <div class="projects reveal">
+      <article class="project">
+        <div class="eyebrow">Immunology · Broad Institute</div>
+        <h3>Immune responses in sepsis</h3>
+        <p>Contributed to patient plasma-based immunology research using multiplex immunoassays and data analysis.</p>
+      </article>
+
+      <article class="project">
+        <div class="eyebrow">Interdisciplinary science</div>
+        <h3>Research across methods</h3>
+        <p>Experience spanning laboratory assays, statistical analysis, computational biology, policy research, and translating complex findings into actionable insights.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="leadership">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">04 / Leadership &amp; impact</div>
+      <div>
+        <h2>Making space for <span class="accent">ideas.</span></h2>
+        <p>Community-building, collaborative projects, and initiatives that expand access and dialogue.</p>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <article class="entry">
+        <div class="meta">Harvard Kennedy School · Institute of Politics · 2024–Present</div>
+        <h3>Associate Director, Sub-Saharan Africa Team</h3>
+        <p>Curated and moderated two or more events per semester on Sub-Saharan African political affairs for audiences of approximately 50–100, including speaker outreach, discussion development, and event coordination.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Harvard Undergraduate African Development Group</div>
+        <h3>Founding Member &amp; Director of Programming</h3>
+        <p>Helped launch a pro bono consulting program supporting two African NGOs, coordinated speaker events and fundraising campaigns, and mentored incoming student leaders.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Harvard Kennedy School · Institute of Politics · 2023–2024</div>
+        <h3>Health Policy Researcher &amp; Writer</h3>
+        <div class="sub">Commissioner Search Committee · Government Accountability Project</div>
+        <p>Researched environmental determinants of health and authored a 45-page policy brief for the Government Accountability Project. Facilitated stakeholder conversations that advanced the initiative and helped secure a project with the National Women’s Health Network.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Sep 2025 – Mar 2026 · Harvard University</div>
+        <h3>Co-Director of Undergraduate Programming</h3>
+        <div class="sub">Harvard Africa Health Conference · March 2026</div>
+        <p>Co-led the inaugural undergraduate programming initiative, developing its foundational blueprint, planning structure, and approach to engaging undergraduate students in conversations on African health.</p>
+      </article>
+
+      <article class="entry">
+        <div class="meta">Community</div>
+        <h3>Service &amp; connection</h3>
+        <p>Volunteered at the Harvard Africa Business Conference at Harvard Business School and participated in Harvard Global Day of Service.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">05 / Speaking &amp; engagement</div>
+      <div>
+        <h2>Conversations that <span class="accent">matter.</span></h2>
+        <p>I enjoy making complex ideas accessible and creating room for meaningful exchange.</p>
+      </div>
+    </div>
+
+    <div class="aboutgrid reveal">
+      <div>
+        <h3>Experience in conversation</h3>
+        <p>I have engaged directly with policymakers on educational access and financial aid, including meetings with state and federal legislative offices through my policy fellowship.</p>
+        <p>At Harvard’s Institute of Politics, I facilitated stakeholder conversations that supported policy progress and helped secure a project with the National Women’s Health Network. I have also moderated conversations on Sub-Saharan African affairs, led leadership and college-readiness workshops across India and Dubai, and presented environmental health policy research to organizational leaders.</p>
+      </div>
+
+      <div>
+        <h3>Topics I'd welcome</h3>
+        <div class="taglist">
+          <span class="tag">Science &amp; health equity</span>
+          <span class="tag">Research journeys</span>
+          <span class="tag">First-generation experiences</span>
+          <span class="tag">Youth leadership</span>
+          <span class="tag">Mentorship &amp; opportunity</span>
+          <span class="tag">Global perspectives</span>
+        </div>
+        <p style="margin-top:24px">For panels, workshops, moderated conversations, mentorship events, or collaborations, please reach out through the contact section.</p>
+        <a class="smalllink" href="#contact">Let's connect ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="beyond">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">06 / Beyond the lab</div>
+      <div>
+        <h2>More than <span class="accent">one discipline.</span></h2>
+        <p>Curiosity and connection extend well beyond my professional work.</p>
+      </div>
+    </div>
+
+    <div class="aboutgrid reveal">
+      <p>I'm passionate about first-generation mentorship, cultural exchange, and using education to help people see new possibilities for themselves.</p>
+      <p>Outside work, I enjoy travel, cooking, language, music, and community service. I speak Asante Twi, Fante, and French, and I love learning from different perspectives.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">07 / Let's connect</div>
+    <h2>Good things begin with a <em>conversation.</em></h2>
+    <p>I welcome speaking invitations, collaborative projects, mentorship opportunities, and thoughtful conversations across science, health, education, and community.</p>
+    <div class="actions" style="margin-top:32px">
+      <a class="button" href="mailto:afuadasare8@gmail.com">Send an email ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap footer">
+  <span>© <span id="year"></span> Afua Asare. Made with curiosity.</span>
+  <span><a href="#home">Back to top ↑</a></span>
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const toggle=document.getElementById('menu'),links=document.getElementById('navlinks');toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
-if('IntersectionObserver' in window){const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const toggle = document.getElementById('menu');
+const links = document.getElementById('navlinks');
+
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.textContent = open ? '×' : '☰';
+});
+
+links.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = '☰';
+  })
+);
+
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12});
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el =>
+    el.classList.add('visible')
+  );
+}
 </script>
-</body></html>
+</body>
+</html>
